@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cerbero Backup Defender</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="barra">
+    <div>
+      <h1>CERBERO BACKUP DEFENDER <span class="sub">- Panel de Control</span></h1>
+      <small id="sesion-info">Conectando...</small>
+    </div>
+    <div class="recursos">
+      <span>[ CPU: <b id="cpu">0%</b> ]</span>
+      <span>[ RAM: <b id="ram">0%</b> ]</span>
+      <small>(consumo simulado)</small>
+    </div>
+  </header>
+
+  <main class="rejilla">
+    <section class="zona">
+      <h2>ZONA 1: COLA DE RESPALDO (FIFO)</h2>
+      <div id="lista-cola" class="lista"></div>
+    </section>
+
+    <section class="zona">
+      <h2>ZONA 2: ÁREA DE PROCESAMIENTO</h2>
+      <div id="zona-servidor" class="servidor-caja"></div>
+    </section>
+
+    <section class="zona">
+      <h2>ZONA 3: PANEL DE ACCIONES</h2>
+      <div class="acciones">
+        <button id="btn-procesar" class="btn azul">▶ PROCESAR SIGUIENTE</button>
+        <button id="btn-neutralizar" class="btn verde">🛡 NEUTRALIZAR MALWARE</button>
+        <button id="btn-rollback" class="btn azul">⏪ EJECUTAR ROLLBACK</button>
+      </div>
+      <div class="extras">
+        <label><input type="checkbox" id="chk-auto" checked> Llegada automática</label>
+        <button id="btn-lote" class="btn-mini">＋ Lote de 5</button>
+        <button id="btn-nueva" class="btn-mini">Nueva sesión</button>
+      </div>
+      <div id="estadisticas" class="stats"></div>
+    </section>
+
+    <section class="zona">
+      <h2>ZONA 4: PILA DE RESTAURACIÓN (LIFO)</h2>
+      <div id="lista-pila" class="lista"></div>
+    </section>
+  </main>
+
+  <section class="zona bitacora-zona">
+    <h2>BITÁCORA DE EVENTOS</h2>
+    <div id="bitacora" class="bitacora"></div>
+  </section>
+
+  <footer>Simulación educativa inspirada en las operaciones de resiliencia de Veeam Software. No realiza respaldos reales ni detecta malware real.</footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
